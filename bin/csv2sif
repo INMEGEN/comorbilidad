@@ -19,12 +19,17 @@ BEGIN {
 	fching = 14
 	fchegr = 15
 	literal = 16
-	OFS="\t"
+	# la tabla está separada por comas.
+	FS = ","
+	OFS = "\t"
 }
 
-{
+# Saltar el encabezado
+NR > 1 {
 	# Imprimir un SIF con la afección principal y las asociadas
-	for (i=affecion1; i <= afeccion4; i++) {
-		print $areccionprinc, $i
+	for (i=afeccion1; i <= afeccion4; i++) {
+		if (length($i) > 0) {
+			print $afeccprinc, $i
+		}
 	}
 }
