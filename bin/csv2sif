@@ -1,0 +1,30 @@
+#!/usr/bin/awk -f
+
+# Convertir en SIF la asociación de enfermedades principales con sus secundarias:
+
+BEGIN {
+	fecha = 1
+	noreg = 2
+	cledad = 3
+	edad = 4
+	SEXO = 5
+	clcama = 6
+	afeccprinc = 7
+	afeccion1 = 8
+	afeccion2 = 9
+	afeccion3 = 10
+	afeccion4 = 11
+	causadef = 12
+	cse = 13
+	fching = 14
+	fchegr = 15
+	literal = 16
+	OFS="\t"
+}
+
+{
+	# Imprimir un SIF con la afección principal y las asociadas
+	for (i=affecion1; i <= afeccion4; i++) {
+		print $areccionprinc, $i
+	}
+}
